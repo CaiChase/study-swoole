@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    var wsUrl = "ws://127.0.0.1:8010"
+    var websocket = new WebSocket(wsUrl);
+    websocket.onopen = function (e) {
+        console.log("websockey connect success");
+    }
+    websocket.onmessage = function (e) {
+        console.log("websocket-data:" + e.data);
+    }
+    websocket.onclose = function (e) {
+        console.log("close");
+    }
+    websocket.onerror = function (e) {
+        console.log("error: " + e.data);
+    }
+</script>
