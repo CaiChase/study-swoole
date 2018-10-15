@@ -16,14 +16,19 @@
     var wsUrl = "ws://127.0.0.1:8010"
     var websocket = new WebSocket(wsUrl);
     websocket.onopen = function (e) {
+	// 发送数据
+	websocket.send("Hello Joyboo");
         console.log("websockey connect success");
     }
+    // 监听服务器的数据
     websocket.onmessage = function (e) {
         console.log("websocket-data:" + e.data);
     }
+    // 监听关闭事件
     websocket.onclose = function (e) {
         console.log("close");
     }
+    // 监听错误
     websocket.onerror = function (e) {
         console.log("error: " + e.data);
     }
